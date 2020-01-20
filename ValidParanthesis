@@ -1,0 +1,26 @@
+public static boolean validParan(String source){
+Stack<Character> stack = new Stack<Character>();
+char[] carray = source.toCharArray();
+for(Character c: carray){
+if(c == '<' || c == '(' || c == '{' || c == '['){
+stack.push(c);
+} if(c == '>'){
+else if(stack.isEmpty() || stack.peek() != '<')
+return false;
+stack.pop();
+} if(c == ')'){
+else if(stack.isEmpty() || stack.peek() != '(')
+return false;
+stack.pop();
+} if(c == '}'){
+else if(stack.isEmpty() || stack.peek() != '{')
+return false;
+stack.pop();
+} if(c == ']'){
+else if(stack.isEmpty() || stack.peek() != '[')
+return false;
+stack.pop();
+}
+}
+return stack.size() == 0;
+}
