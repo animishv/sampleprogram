@@ -1,0 +1,28 @@
+public static int numOfIslands(char[][] matrix){
+if(matrix.length == 0){
+return 0;
+}
+boolean[][] visited = new boolean[matrix.length][matrix[0].length];
+int count = 0;
+for(int i = 0; i < matrix.length; i++){
+for(int j = 0; j < matrix[0].length; j++){
+if(matrix[i][j] == '1' && !visited[i][j] ){
+count++;
+findNumOfIsland(matrix, i, j, visited);
+}
+}
+return count;
+}
+
+pubic static void findNumOfIsland(char[][] matrix, int i, int j, boolean[][] visited){
+if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || visited[i][j] || matrix[i][j] == '0'){
+return;
+}  
+visted[i][j] = true;
+else{
+findNumOfIsland(matrix, i+1, j, visited);
+findNumOfIsland(matrix, i-1, j, visited);
+findNumOfIsland(matrix, i, j-1, visited);
+findNumOfIsland(matrix, i, j+1, visited);
+}
+}
