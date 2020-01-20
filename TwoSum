@@ -1,0 +1,15 @@
+public static int[] twoSum(int[] input, int target){
+if(input == null || input.length == 0){
+retun new int[]{-1, -1}
+}
+
+HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+for(int i = 0; i < input.length; i++){
+if(map.containsKey(target - input[i])){
+return new int[]{map.get(target - input[i]), i};
+} else {
+map.put(input[i], i);
+}
+}
+return new int[] {-1, -1};
+}
