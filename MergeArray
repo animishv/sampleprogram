@@ -1,0 +1,31 @@
+public static int[] mergeArray(int[] arr1, int[] arr2){
+if(arr1 = null || arr1.length == 0){
+return arr2;
+}
+if(arr2 = null || arr2.length == 0){
+return arr1;
+}
+int M = arr1.length;
+int N = arr2.length;
+int[] merge = new int[M+N];
+int i, j, k = 0;
+
+while(i < M && j < N){
+if(arr1[i] < arr2[j]){
+merge[k++] = arr1[i++];
+} else {
+merge[k++] = arr2[j++];
+}
+}
+
+while(i < M){
+merge[k++] = arr1[i++];
+}
+
+while(j < N){
+merge[k++] = arr2[j++];
+}
+
+return merge;
+
+}
