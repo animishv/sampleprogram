@@ -20,8 +20,8 @@ StringBuilder sbuilder = new StringBuilder();
 for(int i = 0; i < times; i++){
 sbuilder.append(result);
 }
-result += sbuilder;
-result = strStack.pop();
+result = strStack.pop() + sbuilder.toString() ;
+num = 0;
 } else{
 result += c;
 }
