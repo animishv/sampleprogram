@@ -1,0 +1,30 @@
+public static String decodeString(String source){
+Stack<Integer> intStack = new Stack<Integer>();
+Stack<String> strStack = new Stack<String>();
+int num = 0;
+String result = " ";
+
+char[] carray = source.toCharArray();
+
+for(Character c : carray){
+if(c == Character.isDigit(c)){
+num = num*10 + c - '0';
+} else if(c == '['){
+intStack.push(c);
+strStack.push(c);
+num = 0;
+result = " ";
+} else if(c == ']'){
+int times = intStack.pop();
+StringBuilder sbuilder = new StringBuilder();
+for(int i = 0; i < times; i++){
+sbuilder.append(result);
+}
+result += sbuilder;
+result = strStack.pop();
+} else{
+result += c;
+}
+}
+return result;
+}
