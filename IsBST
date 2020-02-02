@@ -1,0 +1,15 @@
+public static boolean isBST(TreeNode root, Node left, Node right){
+if(root == null){
+return true;
+}
+
+if(left != null && root.data > left.data){
+return false;
+}
+
+if(right != null && root.data > right.data){
+return false;
+}
+
+return isBST(root.left, left, root) && isBST(root.right, root, right);
+}
