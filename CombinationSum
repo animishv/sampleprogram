@@ -14,7 +14,7 @@ return;
 } 
 for(int i = index; i < input.length; i++){
 if((target > input[i]){
-return;
+break;
 } else {
 temp.add(input[i]);
 findCombinationSum(input, target - input[i], result, temp, i);
