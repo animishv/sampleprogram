@@ -15,7 +15,7 @@ left++;
 count--;
 }
 
-if(right - left + 1 > window){
+if((right - left + 1) > window){
 window = right - left + 1;
 }
 }
