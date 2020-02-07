@@ -6,7 +6,7 @@ findCombinationSum(input, target, result, temp, 0);
 return result;
 }
 
-public static void findCombinationSum(int[] input, int target, List<List<Integer>> result, List<Integer> temp, int sum, int index){
+public static void findCombinationSum(int[] input, int target, List<List<Integer>> result, List<Integer> temp, int index){
 if(target == 0){
 temp = new ArrayList<Integer>();
 result.add(temp);
