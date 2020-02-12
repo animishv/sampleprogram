@@ -1,6 +1,6 @@
 public static String decodeString(String source){
 Stack<Integer> intStack = new Stack<Integer>();
-Stack<String> strStack = new Stack<String>();
+Stack<Character> strStack = new Stack<Character>();
 int num = 0;
 String result = " ";
 
