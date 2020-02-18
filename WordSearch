@@ -1,0 +1,31 @@
+public static boolean findWord(char[][] matrix, String source){
+	for(int i = 0; i < matrix.length; i++){
+		for(int j = 0; j < matrix[0].length; j++){
+			if(matchWord(matrix, source, i, j, 0)){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+public static boolean matchWord(char[][] matrix, String source, int i, int j, int K){
+	if(i<0 ||j < 0 || i >= matrix.length || j >= matrix[0].length){
+		return false;
+	}
+
+	if(matrix[i][j] == source.charAt(K)){
+		char temp = matrix[i][j];	
+		matrix[i][j] = '#';
+		if(k == source.length() - 1){
+			return true;
+		} else if(matchWord(matrix, source, i-1, j, K + 1) ||
+			matchWord(matrix, source, i+1, j, K + 1) ||
+			matchWord(matrix, source, i, j+1, K + 1) ||
+			matchWord(matrix, source, i, j-1, K + 1)){
+			return true;
+		}
+    matrix[i][j] = temp;
+    }
+}
+
