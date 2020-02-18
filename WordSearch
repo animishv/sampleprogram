@@ -25,7 +25,8 @@ public static boolean matchWord(char[][] matrix, String source, int i, int j, in
 			matchWord(matrix, source, i, j-1, K + 1)){
 			return true;
 		}
-    matrix[i][j] = temp;
+           matrix[i][j] = temp;
     }
+    return false;
 }
 
