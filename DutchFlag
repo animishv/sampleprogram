@@ -1,24 +1,24 @@
-public static int[] dutchFlag(int[] input){
-int start = 0;
-int mid = 0;
-int end = input.length -1;
+public static int[] dutchFlag(int[] input) {
+    int start = 0;
+    int mid = 0;
+    int end = input.length - 1;
 
-while(mid <= end){
-if(input[mid] == 0){
-swap(input, start, mid);
-start++;
-mid++;
-} else if(input[mid] == 2){
-swap(input, mid, end);
-end--;
-} else{
-mid++;
-}
-}
+    while (mid <= end) {
+        if (input[mid] == 0) {
+            swap(input, start, mid);
+            start++;
+            mid++;
+        } else if (input[mid] == 2) {
+            swap(input, mid, end);
+            end--;
+        } else {
+            mid++;
+        }
+    }
 }
 
-public static void swap(int[] input, int i, int j){
-int temp = input[i];
-input[i] = input[j];
-input[j] = temp;
+public static void swap(int[] input, int i, int j) {
+    int temp = input[i];
+    input[i] = input[j];
+    input[j] = temp;
 }
