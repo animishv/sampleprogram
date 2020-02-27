@@ -1,9 +1,9 @@
-public static int buy&SellStock_2(int[] input){
-int max_profit = 0;
-for(int i = 1; i < input.length; i++){
-if(input[i] > input[i-1]){
-max_profit += input[i] - input[i-1];
-}
-}
-return max_profit;
+public static int buy & SellStock_2(int[] input) {
+    int max_profit = 0;
+    for (int i = 1; i < input.length; i++) {
+        if (input[i] > input[i - 1]) {
+            max_profit += input[i] - input[i - 1];
+        }
+    }
+    return max_profit;
 }
