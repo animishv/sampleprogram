@@ -1,10 +1,10 @@
-public static int maxSubarraySum(int[] input){
-int max_so_far = input[0];
-int max_end_here = input[0];
+public static int maxSubarraySum(int[] input) {
+    int max_so_far = input[0];
+    int max_end_here = input[0];
 
-for(int i = 1, int i < input.length; i++){
-max_end_here = Math.max(input[i], input[i] + max_end_here);
-max_so_far = Math.max(max_so_far, max_end_here);
-}
-return max_so_far;
+    for (int i = 1, int i < input.length; i++) {
+        max_end_here = Math.max(input[i], input[i] + max_end_here);
+        max_so_far = Math.max(max_so_far, max_end_here);
+    }
+    return max_so_far;
 }
