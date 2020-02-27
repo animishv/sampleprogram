@@ -1,12 +1,12 @@
-public static int reverseInteger(int x){
+public static int reverseInteger(int x) {
 
-int reverse_int = 0;
-while(x != 0){
-int pop = x%10;
-x /= 10;
+    int reverse_int = 0;
+    while (x != 0) {
+        int pop = x % 10;
+        x /= 10;
 
-reverse_int = (reverse_int*10) + pop;
-}
+        reverse_int = (reverse_int * 10) + pop;
+    }
 
-return reverse_int;
+    return reverse_int;
 }
