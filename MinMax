@@ -1,13 +1,16 @@
-public static int[] minMax(int[] input){
-int min = Integer.MAX_VALUE;
-int max = Integer.MIN_VALUE;
+public static int[] minMax(int[] input) {
+    int min = Integer.MAX_VALUE;
+    int max = Integer.MIN_VALUE;
 
-for(int i = 0; i < input.length; i++){
-if(input[i] > max){
-max = input[i];
-} else if(input[i] < min){
-min = input[i];
-}
-}
-return new int[] {min, max};
+    for (int i = 0; i < input.length; i++) {
+        if (input[i] > max) {
+            max = input[i];
+        } else if (input[i] < min) {
+            min = input[i];
+        }
+    }
+    return new int[] {
+        min,
+        max
+    };
 }
