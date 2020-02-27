@@ -1,13 +1,13 @@
-public static int buyAndSellStocks1(int[] input){
-int max = Integer.MIN_VALUE;
-int min = Integer.MAX_VALUE;
+public static int buyAndSellStocks1(int[] input) {
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
 
-for(int i = 0; i < input.length; i++){
-if(input[i] < min){
-min = input[i]
-} else if(input[i] - min > max){
-max = input[i] - min;
-}
-}
-return max;
+    for (int i = 0; i < input.length; i++) {
+        if (input[i] < min) {
+            min = input[i]
+        } else if (input[i] - min > max) {
+            max = input[i] - min;
+        }
+    }
+    return max;
 }
