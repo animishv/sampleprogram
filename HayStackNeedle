@@ -1,12 +1,12 @@
-public static int hayStackNeedle(String haystack, String needle){
+public static int hayStackNeedle(String haystack, String needle) {
 
-int M = hastack.length();
-int N = needle.length();
+    int M = hastack.length();
+    int N = needle.length();
 
-for(int i = 0; i < M-N+1; i++){
-if(haystack.substring(i, i+N).equals(needle)){
-return i;
-}
-}
-return -1;
+    for (int i = 0; i < M - N + 1; i++) {
+        if (haystack.substring(i, i + N).equals(needle)) {
+            return i;
+        }
+    }
+    return -1;
 }
