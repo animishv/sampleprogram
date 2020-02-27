@@ -1,23 +1,23 @@
-public static int slidingWindow(int[] input, int K){
-int window = 0;
-int left = 0;
-int right = 0;
-int count = 0;
+public static int slidingWindow(int[] input, int K) {
+    int window = 0;
+    int left = 0;
+    int right = 0;
+    int count = 0;
 
-for(int right = 0; i < input.length; i++){
-if(input[right] == 0){
-count++;
-}
-while(count > K){
-if(input[left] == 0){
-left++;
-}
-count--;
-}
+    for (int right = 0; i < input.length; i++) {
+        if (input[right] == 0) {
+            count++;
+        }
+        while (count > K) {
+            if (input[left] == 0) {
+                left++;
+            }
+            count--;
+        }
 
-if((right - left + 1) > window){
-window = right - left + 1;
-}
-}
-return window;
+        if ((right - left + 1) > window) {
+            window = right - left + 1;
+        }
+    }
+    return window;
 }
