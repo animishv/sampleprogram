@@ -1,13 +1,13 @@
-public static boolean validPallindrome(String source){
-int i = 0;
-String temp = source.replace(" ", "");
-int j = temp.length - 1;
-while(i < j){
-if(temp.charAt(i) == temp.charAt(j)){
-i++;
-j--;
-} else
-return false;
-}
-return true;
+public static boolean validPallindrome(String source) {
+ int i = 0;
+ String temp = source.replace(" ", "");
+ int j = temp.length - 1;
+ while (i < j) {
+  if (temp.charAt(i) == temp.charAt(j)) {
+   i++;
+   j--;
+  } else
+   return false;
+ }
+ return true;
 }
