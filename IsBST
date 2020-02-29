@@ -3,11 +3,11 @@ public static boolean isBST(TreeNode root, Node left, Node right) {
         return true;
     }
 
-    if (left != null && root.data > left.data) {
+    if (left != null && root.data < left.data) {
         return false;
     }
 
-    if (right != null && root.data < right.data) {
+    if (right != null && root.data > right.data) {
         return false;
     }
 
