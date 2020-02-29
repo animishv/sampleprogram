@@ -1,5 +1,4 @@
 public static int maximumLengthSubarrayToGivenSum(int[] input, int K) {
-    int count = 0;
     int maxLength = 0;
 
     for (int i = 0; i < input.length; i++) {
