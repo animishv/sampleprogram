@@ -1,1 +1,34 @@
-
+public static ListNode addLinkedList(ListNode L1, ListNode L2){
+	int carry = 0;
+	int result = 0;
+	ListNode head = null;
+	ListNode output = head;
+	
+	if(L1 == null){
+		return L2;
+	}
+	if(L2 == null){
+		return L1;
+	}
+	
+	while(L1 != null || L2 != null){
+		result = L1.value + L2.value + carry;
+		if(result >= 10){
+			result = result%10;
+			carry = result/10;
+		}
+		ListNode output = new ListNode(result);
+		output.next = carry;
+		output = output.next;
+	}
+	
+	while(L1 =! null && L2 == null){
+		result = L1.value + carry;
+		ListNode output = new ListNode(result);
+	}
+	while(L2 =! null && L1 == null){
+		result = L2.value + carry;
+		ListNode output = new ListNode(result);
+	}
+	return output.next;
+}
