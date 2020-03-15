@@ -1,1 +1,28 @@
+public static int longestIncreasingSubsequence(int[] input, int N){
+	int[] temp = new int[N];
+	int length = 1;
+	temp[0] = input[0];
+	
+	for(int i  = 1; i < N; i++){
+		if(input[i] < temp[0]){
+			temp[0] = input[i];
+		} else if(input[i] > temp[length - 1]){
+			temp[length++] = input[i];
+		} else{
+			temp[binarySearch(temp, -1, length - 1, input[i])] = input[i];
+		}
+	}
+	return length;
+}
 
+public static int binarySearch(int[] input, int start, int end, int key){
+	while(end - start > 1){
+		int mid = (start + end)/2;
+		if(key <= input[mid]){
+			end = mid; 
+		} else {
+			start = mid;
+		}
+	}
+	return end;
+}
