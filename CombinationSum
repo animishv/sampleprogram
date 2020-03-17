@@ -13,7 +13,7 @@ public static void findCombinationSum(int[] input, int target, List < List < Int
             return;
         }
         for (int i = index; i < input.length; i++) {
-            if ((target > input[i]) {
+            if ((target < input[i]) {
                     break;
                 } else {
                     temp.add(input[i]);
