@@ -1,0 +1,29 @@
+public static boolean findSum(TreeNode root, int target){
+	List<Integer> result = new ArrayList<Integer>();
+	inOrder(root, result);
+	
+	
+	int start = 0;
+	int end = list.size() - 1;
+	
+	while(start < end){
+		if(list.get(start) + list.get(end) == target){
+			return true;
+		} else if (list.get(start) + list.get(end) > target){
+			start++;
+		} else {
+			end--;
+		}
+	} 
+	return false;
+}
+
+public static void inOrder(TreeNode root, List<Integer> list){
+	if(root == null){
+		return;
+	}
+	
+	inOrder(root.left);
+	list.add(root);
+	inOrder(root.right);
+}
