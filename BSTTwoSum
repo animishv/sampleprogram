@@ -9,7 +9,7 @@ public static boolean findSum(TreeNode root, int target){
 	while(start < end){
 		if(list.get(start) + list.get(end) == target){
 			return true;
-		} else if (list.get(start) + list.get(end) > target){
+		} else if (list.get(start) + list.get(end) < target){
 			start++;
 		} else {
 			end--;
