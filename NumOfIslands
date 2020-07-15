@@ -12,7 +12,7 @@ public static int numOfIsland(int[][] matrix){
 }
 
 public static void findNumOfIsland(int[][] matrix, int i, int j){
-	if(i < 0 || j < 0 || i >= matrix.length || matrix[0].length || matrix[i][j] == 0){
+	if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || matrix[i][j] == 0){
 		return;
 	}
 
