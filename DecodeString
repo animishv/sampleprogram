@@ -10,8 +10,8 @@ public static String decodeString(String source) {
         if (c == Character.isDigit(c)) {
             num = num * 10 + c - '0';
         } else if (c == '[') {
-            intStack.push(c);
-            strStack.push(c);
+            intStack.push(num);
+            strStack.push(result);
             num = 0;
             result = " ";
         } else if (c == ']') {
