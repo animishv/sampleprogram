@@ -1,0 +1,36 @@
+public static int throw_dice(int N, int faces, int total){
+	int[][] matrix = new int[55][55];
+	int count = 0;
+	
+	if(N == 0 && total == 0){
+		return 1;
+	}
+	
+	if(N == 0 || total < 0){
+		return 0;
+	}
+	
+	if(matrix[N][total] != -1){
+		return matrix[N][total];
+	}
+	
+	count = 0;
+	
+	for(int i = 1; i <= faces; i++){
+		count += throw_dice(N - 1, faces, total - i);
+	}
+	
+	return return matrix[N][total] = count;
+}
+
+public static void main(String[] args){
+	for(int i = 0; i < 55; i++){
+		for(int j = 0; j < 55; j++){
+			matrix[i][j] = -1;
+		}
+	}
+	System.out.println(throw_dice(6, 3, 12));
+}
+
+Output:
+25
