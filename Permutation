@@ -1,0 +1,26 @@
+public static void permutation(String source){
+	char l = 0;
+	char r = source.length() - 1;
+	calculatePermutation(source, l, r);
+}
+
+public static void calculatePermutation(String source, char l, char r){
+	if(l = r){
+		System.out.println(source);
+	}
+	
+	for(int i = l; i <= r; i++){
+		source = swap(source, l, i);
+		calculatePermutation(source, l + 1, r);
+		source = swap(swap, l, i);
+	}	
+}
+
+public static String swap(String source, char i, char j){
+	char[] carray = source.toCharArray();
+	char temp;
+	temp = carray[i];
+	carray[i] = carray[j];
+	carray[j] = temp;
+	return String.valueOf(carray);
+}
