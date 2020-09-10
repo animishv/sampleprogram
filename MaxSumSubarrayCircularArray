@@ -1,0 +1,41 @@
+1. Find Kadane's of the existing array
+2. Add the elements of the array and find the sum.
+3. Invert the the existing array by multiplying the elements by -1.
+4. Find Kadane's of the inverted array.
+5. Add this to the sum of the existing array. Name this as invertedSum.
+6. If the invertedSum is greater than Kadane's of existing array and not equal to 0. Return invertedSum, else return Kadane of existing array.
+
+public static int maxSubarraySum(int[] input){
+	int max_so_far = input[0];
+	int max_end_here = input[0];
+	
+	for(int i = 1; i < input.length; i++){
+		max_end_here = Math.max(input[i], max_end_here + input[i]);
+		max_so_far = Math.max(max_so_far, max_end_here);
+	}
+	return max_so_far;
+}
+
+public static int maxSubarraySumCircular(int[] input){
+	int existingKadane = maxSubarraySum(input);
+	int existingSum = 0;
+	int finalSum = 0;
+	
+	for(int i = 0; i < input.length; i++){
+		existingSum += input[i];
+	}
+	
+	int[] invertedArray = new int[input.length];
+	for(int i = 0; i < input.length; i++){
+		invertedArray[-i] = input[i];
+	}
+	
+	int invertedKadane = maxSubarraySum(invertedArray);
+	
+	finalSum = existingSum + invertedKadane;
+	
+	if(finalSum > existingKadane && finalSum != 0){
+		return finalSum;
+	} 
+		return existingKadane;
+}
