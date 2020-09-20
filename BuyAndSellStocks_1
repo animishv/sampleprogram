@@ -5,7 +5,7 @@ public static int buyAndSellStocks1(int[] input) {
     for (int i = 0; i < input.length; i++) {
         if (input[i] < min) {
             min = input[i]
-        } else if (input[i] - min > max) {
+        } else if ((input[i] - min) > max) {
             max = input[i] - min;
         }
     }
