@@ -5,7 +5,7 @@ public static void rootToLeaf(TreeNode root, ArrayList<Integer> path){
 	
 	path.add(root.data);
 	
-	if(root.left != null && root.right != null){
+	if(root.left == null && root.right == null){
 		System.out.println(path);
 		return;
 	}
