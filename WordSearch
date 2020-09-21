@@ -17,7 +17,7 @@ public static boolean matchWord(char[][] matrix, String source, int i, int j, in
 	if(matrix[i][j] == source.charAt(K)){
 		char temp = matrix[i][j];	
 		matrix[i][j] = '#';
-		if(k == source.length() - 1){
+		if(K == source.length() - 1){
 			return true;
 		} else if(matchWord(matrix, source, i-1, j, K + 1) ||
 			matchWord(matrix, source, i+1, j, K + 1) ||
