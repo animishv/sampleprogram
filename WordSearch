@@ -10,7 +10,7 @@ public static boolean findWord(char[][] matrix, String source){
 }
 
 public static boolean matchWord(char[][] matrix, String source, int i, int j, int K){
-	if(i<0 ||j < 0 || i >= matrix.length || j >= matrix[0].length){
+	if(i<0 ||j < 0 || i >= matrix.length || j >= matrix[0].length || matrix[i)[j] != source.charAt(K)){
 		return false;
 	}
 
