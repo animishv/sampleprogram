@@ -14,10 +14,10 @@ public static int[] intersectionArray(int[] arr1, int[] arr2){
 		} else {
 			i++;
 			j++;
-			map.put(arr1[i], i);	
+			map.put(i, arr1[i]);	
 		}
 		int[] intersection = new int[map.size()];
-		intersection[i] = arr1[i];
+		intersection[i] = map.get(i);
 	}
 	return intersection;
 }
