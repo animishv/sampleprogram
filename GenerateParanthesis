@@ -1,0 +1,20 @@
+public static List<String> generateParanthesis(int n){
+	List<String> output = new ArrayList<String>();
+	backtracking(output, "", 0, 0, n);
+	return output;
+}
+
+public static void backtracking(List<String> output, String currentString, int open, int close, int max){
+	if(currentString.length() == 2*max){
+		output.add(currentString);
+		return;
+	}
+
+	if(open < max){
+		backtracking(output, currentString + "(", open + 1, close, max);
+	}
+
+	if(close < open){
+		backtracking(output, currentString + ")", open, close + 1, max);
+	}
+}
