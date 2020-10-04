@@ -23,7 +23,7 @@ public static void inOrder(TreeNode root, List<Integer> list){
 		return;
 	}
 	
-	inOrder(root.left);
+	inOrder(root.left, path);
 	list.add(root);
-	inOrder(root.right);
+	inOrder(root.right, path);
 }
