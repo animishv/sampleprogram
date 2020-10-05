@@ -2,33 +2,20 @@ public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     if (headA == null || headB == null) {
         return null;
     }
-	int length1 = 0, length2 = 0, diff = 0;
-	ListNode list1 = headA, list2 = headB;
-	while (list1 != null) {
-		length1++;
-		list1 = list1.next;
-	}
-	while (list2 != null) {
-		length2++;
-		list2 = list2.next;
-	}
-	list1 = headA;
-	list2 = headB;
-	diff = length1 - length2;
-	if (length2 > length1) {
-		list1 = headB;
-		list2 = headA;
-		diff = length2 - length1;
-	}
-	for (int i = 0; i < diff; i++) {
-		list1 = list1.next;
-	}
-	while (list1 != null && list2 != null) {
-		if (list1.val == list2.val) {
-			return list1;
-		}
-		list1 = list1.next;
-		list2 = list2.next;
-	}
-	return null;
+	
+    Set<Integer> set = new HashSet<Integer>();
+    
+    while(headA != null){
+	    set.add(headA.data);
+	    headA = headA.next;
+    }
+    
+    while(headB != null){
+	    if(set.contains(headB.data)){
+		    return headB;
+	    } else {
+		    headB = headB.next;
+	    }
+    }
+    return null;
 }
