@@ -3,13 +3,13 @@ public static List<List<String>> groupAnagram(List<String> source){
 	Map<String, List<String>> map = new HashMap<String, List<String>>();
 	
 	for(String word : source){
-		char[] carray = word.toCharArray();
+		char[] characters = word.toCharArray();
 		Arrays.sort(carray);
-		String sortedWord = new String(carray);
+		String sortedWord = new String(characters);
 		if(!map.containsKey(sortedWord)){
 			map.put(sortedWord, new ArrayList<String>());
 		} else {
-			map.get(sortedWord).add(carray);
+			map.get(sortedWord).add(characters);
 		}
 	}
 	result.add(map.values());
