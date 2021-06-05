@@ -4,7 +4,7 @@ public static List<List<String>> groupAnagram(List<String> source){
 	
 	for(String word : source){
 		char[] characters = word.toCharArray();
-		Arrays.sort(carray);
+		Arrays.sort(characters);
 		String sortedWord = new String(characters);
 		if(!map.containsKey(sortedWord)){
 			map.put(sortedWord, new ArrayList<String>());
