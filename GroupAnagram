@@ -8,9 +8,8 @@ public static List<List<String>> groupAnagram(List<String> source){
 		String sortedWord = new String(characters);
 		if(!map.containsKey(sortedWord)){
 			map.put(sortedWord, new ArrayList<String>());
-		} else {
+		} 
 			map.get(sortedWord).add(characters);
-		}
 	}
 	result.add(map.values());
 	return result;
