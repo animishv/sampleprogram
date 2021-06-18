@@ -12,7 +12,7 @@ public static void calculatePermutation(String source, char l, char r){
 	for(int i = l; i <= r; i++){
 		source = swap(source, l, i);
 		calculatePermutation(source, l + 1, r);
-		source = swap(swap, l, i);
+		source = swap(source, l, i);
 	}	
 }
 
