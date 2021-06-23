@@ -1,0 +1,19 @@
+public int findKthNode(TreeNode root, int K){
+    if(root == null){
+        return null;
+    }
+
+    List<Integer> result = new ArrayList<Integer>();
+    inOrder(root, result);
+    return result.get(K-1);
+}
+
+public void inOrder(TreeNode root, List<Integer> result){
+    if(root == null){
+        return;
+    }
+
+    inOrder(root.left, result);
+    result.add(root);
+    inOrder(root.right, result);
+}
