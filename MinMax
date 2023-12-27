@@ -1,3 +1,5 @@
+/* How do you find the minimum and maximum element in an array */
+
 public static int[] minMax(int[] input) {
     int min = Integer.MAX_VALUE;
     int max = Integer.MIN_VALUE;
