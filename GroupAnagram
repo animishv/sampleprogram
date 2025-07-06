@@ -9,7 +9,7 @@ public static List<List<String>> groupAnagram(List<String> source){
 		if(!map.containsKey(sortedWord)){
 			map.put(sortedWord, new ArrayList<String>());
 		} 
-			map.get(sortedWord).add(characters);
+			map.get(sortedWord).add(word);
 	}
 	result.add(map.values());
 	return result;
