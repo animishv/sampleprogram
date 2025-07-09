@@ -1,23 +1,27 @@
-public static int[] intersectionArray(int[] arr1, int[] arr2){
-	int M = arr1.length;
-	int N = arr2.length;
-	
-	Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-	int i = 0;
-	int j = 0;
-	
-	while(i < M && j < N){
-		if(arr1[i] < arr2[j]){
-			i++;
-		} else if(arr1[i] > arr2[j]){
-			j++;
-		} else {
-			i++;
-			j++;
-			map.put(i, arr1[i]);	
-		}
-		int[] intersection = new int[map.size()];
-		intersection[i] = map.get(i);
-	}
-	return intersection;
+public static List<Integer> arrayIntersection(int[] arr1, int[] arr2) {
+    List<Integer> result = new ArrayList<>();
+
+    if (arr1 == null || arr2 == null || arr1.length == 0 || arr2.length == 0) {
+        result.add(-1);
+        return result;
+    }
+
+    Arrays.sort(arr1);
+    Arrays.sort(arr2);
+
+    int i = 0;
+    int j = 0;
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            i++;
+        } else if (arr1[i] > arr2[j]) {
+            j++;
+        } else {
+            result.add(arr1[i]);
+            i++;
+            j++;
+        }
+    }
+    return result;
 }
