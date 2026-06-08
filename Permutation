@@ -1,11 +1,11 @@
 public static void permutation(String source){
-	char l = 0;
-	char r = source.length() - 1;
+	int l = 0;
+	int r = source.length() - 1;
 	calculatePermutation(source, l, r);
 }
 
-public static void calculatePermutation(String source, char l, char r){
-	if(l = r){
+public static void calculatePermutation(String source, int l, int r){
+	if(l == r){
 		System.out.println(source);
 	}
 	
@@ -16,7 +16,7 @@ public static void calculatePermutation(String source, char l, char r){
 	}	
 }
 
-public static String swap(String source, char i, char j){
+public static String swap(String source, int i, int j){
 	char[] carray = source.toCharArray();
 	char temp;
 	temp = carray[i];
