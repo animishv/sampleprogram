@@ -26,5 +26,5 @@ public int area(int[][] matrix, int row, int column) {
     }
     
     seen[row][column] = true;
-    return (1 + area(matrix, row+1, column) + area(matrix, row-1, column) + area(matrix, row, column+1) + area(matrix, row, column)-1);
+    return (1 + area(matrix, row+1, column) + area(matrix, row-1, column) + area(matrix, row, column+1) + area(matrix, row, column-1));
 }
