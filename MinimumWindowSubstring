@@ -1,0 +1,75 @@
+Given two strings:
+
+s = "ADOBECODEBANC"
+
+t = "ABC"
+
+Return the smallest substring of s that contains every character in t.
+
+Output: "BANC"
+
+
+public static String minWindow(String s, String t) {
+
+    if (s == null || t == null || s.length() < t.length()) {
+        return "";
+    }
+
+    // Characters we need
+    Map<Character, Integer> needMap = new HashMap<>();
+
+    for (char c : t.toCharArray()) {
+        needMap.put(c, needMap.getOrDefault(c, 0) + 1);
+    }
+
+    // Characters currently inside the window
+    Map<Character, Integer> windowMap = new HashMap<>();
+
+    int required = needMap.size();
+    int formed = 0;
+
+    int left = 0;
+    int right = 0;
+
+    int minLength = Integer.MAX_VALUE;
+    int start = 0;
+
+    while (right < s.length()) {
+
+        char c = s.charAt(right);
+
+        windowMap.put(c, windowMap.getOrDefault(c, 0) + 1);
+
+        // If current character now satisfies the requirement
+        if (needMap.containsKey(c)
+                && windowMap.get(c).intValue() == needMap.get(c).intValue()) {
+            formed++;
+        }
+
+        // Try shrinking
+        while (left <= right && formed == required) {
+
+            if (right - left + 1 < minLength) {
+                minLength = right - left + 1;
+                start = left;
+            }
+
+            char leftChar = s.charAt(left);
+
+            windowMap.put(leftChar, windowMap.get(leftChar) - 1);
+
+            if (needMap.containsKey(leftChar)
+                    && windowMap.get(leftChar) < needMap.get(leftChar)) {
+                formed--;
+            }
+
+            left++;
+        }
+
+        right++;
+    }
+
+    return minLength == Integer.MAX_VALUE
+            ? ""
+            : s.substring(start, start + minLength);
+}
