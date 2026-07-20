@@ -1,15 +1,16 @@
-public boolean hasCycle(ListNode head) {
-    if (head == null || head.next == null) {
+static boolean isCircular(Node head) {
+        if (head == null)
+            return true;
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+
+        // Traverse the linked list with two pointers
+        while (fast != null && fast.next != null) {
+            if (slow == fast)
+                return true;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
         return false;
     }
-    ListNode slow = head;
-    ListNode fast = head.next;
-    while (slow != fast) {
-        if (fast == null || fast.next == null) {
-            return false;
-        }
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return true;
-}
